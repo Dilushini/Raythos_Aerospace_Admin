@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <!-- Add this line to include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add this line to include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-s/AnkaCZZ+E4kmWU1BRi39L+MvMQIs9FRduTVCLs+P6Rw9MMv8EZJ2Spg4kNb+3yqGcpaQOqWx67X9w8Y+GbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<div class="text-center">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlSyMnHw6PG9_PO3r93mG6TbY2ZVgt1MB_Vg&usqp=CAU" alt="Banner Image" class="img-fluid">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJ3v01x6urBFA7nmo_WtZFdZoFqxBQKssGQ&usqp=CAU" alt="Banner Image" class="img-fluid">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVUm2pckpphNts03JJaPh2Dr92IJ_EQf-VKQ&usqp=CAU" alt="Banner Image" class="img-fluid">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLlO4fZqitR4y2-CiSLxfVaFZHU6dkP2Hsw&usqp=CAU" alt="Banner Image" class="img-fluid">
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3 class="mt-5">Orders</h3>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="mt-5">Work in Progress</h3>
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="mt-5">Completed Orders</h3>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h4>Revenue in the Past 5 Years</h4>
+        <canvas id="revenueChart" width="100" height="50"></canvas>
+    </div>
+
+    <!-- Script for Chart.js and Revenue Bar Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for the past 5 years
+        var years = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
+        var revenueData = [50000, 75000, 100000, 90000, 120000];
+
+        // Get the canvas element
+        var ctx = document.getElementById('revenueChart').getContext('2d');
+
+        // Create the bar chart
+        var revenueChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Revenue',
+                    data: revenueData,
+                    backgroundColor: '#8B0000', // Adjust the color as needed
+                    borderColor: '#8B0000',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Table for Orders -->
+    <div class="mt-4">
+        <h4>Orders Received</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Product A</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Product B</td>
+                    <td>3</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <!-- Table for Work in Progress -->
+    <div class="mt-4">
+        <h4>Work in Progress Items</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Task A</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Task B</td>
+                    <td>On Hold</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
