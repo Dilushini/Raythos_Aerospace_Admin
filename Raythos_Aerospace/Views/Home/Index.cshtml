@@ -5,7 +5,10 @@
     <!-- Add this line to include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Add this line to include Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-s/AnkaCZZ+E4kmWU1BRi39L+MvMQIs9FRduTVCLs+P6Rw9MMv8EZJ2Spg4kNb+3yqGcpaQOqWx67X9w8Y+GbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="correct-integrity-value-here" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/styles.css">
+
+
 </head>
 
 <div class="text-center">
@@ -15,33 +18,36 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLlO4fZqitR4y2-CiSLxfVaFZHU6dkP2Hsw&usqp=CAU" alt="Banner Image" class="img-fluid">
 
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h3 class="mt-5">Orders</h3>
+<div style="display:flex;flex-direction:column;">
+<div style="display:flex;flex-direction:row;gap:10px;margin-top:50px;">
+        <div class="bg-light" style="flex:1;padding:30px 10px">
+        <h3 style="margin-bottom:20px;">Orders</h3>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <h3 class="mt-5">Work in Progress</h3>
+        <div class="bg-light" style="flex:1;padding:30px 10px">
+            <h3 style="margin-bottom:20px;">Work in Progress</h3>
         <div class="progress">
             <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <h3 class="mt-5">Completed Orders</h3>
+        <div class="bg-light" style="flex:1;padding:30px 10px">
+            <h3 style="margin-bottom:20px;">Completed Orders</h3>
         <div class="progress">
             <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
         </div>
     </div>
-
-    <div class="mt-4">
-        <h4>Revenue in the Past 5 Years</h4>
-        <canvas id="revenueChart" width="100" height="50"></canvas>
+        <div></div>
     </div>
+    <div style="display:flex;flex-direction:row;margin-top:50px;gap:10px;">
+        <div style="flex:1;width:300px; height:300px;">
+        <h4>Revenue in the Past 5 Years</h4>
+        <canvas id="revenueChart" ></canvas>
+        </div>
+   
 
     <!-- Script for Chart.js and Revenue Bar Chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -77,8 +83,8 @@
     </script>
 
     <!-- Table for Orders -->
-    <div class="mt-4">
-        <h4>Orders Received</h4>
+        <div style="flex:1;">
+            <h4 style="margin-bottom:35px;">Orders Received</h4>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -102,11 +108,11 @@
             </tbody>
         </table>
     </div>
-</div>
+
 
     <!-- Table for Work in Progress -->
-    <div class="mt-4">
-        <h4>Work in Progress Items</h4>
+        <div style="flex:1;">
+            <h4 style="margin-bottom:35px;">Work in Progress Items</h4>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -129,8 +135,12 @@
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
+
+        </div>
     </div>
-</div>
+
+    </div>
 
 
-</div>
+
+

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Raythos_Aerospace.Data;
 
@@ -11,9 +12,10 @@ using Raythos_Aerospace.Data;
 namespace Raythos_Aerospace.Migrations
 {
     [DbContext(typeof(Raythos_AerospaceContext))]
-    partial class Raythos_AerospaceContextModelSnapshot : ModelSnapshot
+    [Migration("20231203105854_identity-build")]
+    partial class identitybuild
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,10 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Raythos_Aerospace.Data;
+using Microsoft.AspNetCore.Identity;
 //using Raythos_Aerospace.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Raythos_AerospaceContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Raythos_AerospaceContext") ?? throw new InvalidOperationException("Connection string 'Raythos_AerospaceContext' not found.")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<Raythos_AerospaceContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,8 +27,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
